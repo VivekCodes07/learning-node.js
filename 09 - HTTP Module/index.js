@@ -38,9 +38,18 @@ server.listen(5000, () => {
 });
 
 // STEP 8 (REAL WORLD FLOW):
-// Browser goes to http://localhost:5000
-// → Request is sent to Node server
-// → createServer callback runs
-// → Response is created (headers + body)
-// → Response is sent back
-// → Browser displays: "Hello from nodejs"
+/*
+Browser Request
+      ↓
+http.createServer() receives it
+      ↓
+req + res objects are created
+      ↓
+writeHead() sets response rules
+      ↓
+write() sends actual content
+      ↓
+end() finishes response
+      ↓
+Browser displays output 🎉
+*/
